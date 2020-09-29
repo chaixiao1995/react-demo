@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import styles from '../pages/style.scss';
+
+console.log(styles)
 
 class ProductRow extends Component {
   constructor(props) {
@@ -9,7 +12,7 @@ class ProductRow extends Component {
     const product = this.props.product;
     const name = product.stocked ? product.name : <span style={{color: 'red'}}>{product.name}</span>
     return ( 
-      <tr>
+      <tr className={'green'}>
         <td>{name}</td>
         <td>{product.price}</td>
       </tr>

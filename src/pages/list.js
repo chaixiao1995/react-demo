@@ -4,6 +4,7 @@ import ProductTable from '../components/ProductTable';
 import store from '../store/index'
 import * as types from '../store/types'
 import { changeInputAction } from '../store/actionCreators'
+import HookDemo from './hookDemo';
 
 class List extends Component {
   constructor(props) {
@@ -42,6 +43,7 @@ class List extends Component {
       <div>
         <Search filterText={this.state.filterText} isStockOnly={this.state.isStockOnly} changeFilterText={this.changeFilterText} changeIsStockOnly={this.changeIsStockOnly} />
         <ProductTable products={products} filterText={this.state.filterText} isStockOnly={this.state.isStockOnly} />
+        <HookDemo />
       </div>
     );
   }

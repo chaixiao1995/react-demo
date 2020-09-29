@@ -7,26 +7,28 @@ const defaultState = {
   list: []
 }
 export default (state = defaultState, action) => {
-  if(action.type === types.CHANGE_INPUT){
+  if (action.type === types.CHANGE_INPUT) {
     let newState = JSON.parse(JSON.stringify(state)) //深度拷贝state
     newState.filterText = action.value
     return newState
   }
-  if(action.type === types.CHANGE_CHECK){
+  if (action.type === types.CHANGE_CHECK) {
     let newState = JSON.parse(JSON.stringify(state))
     newState.isStockOnly = action.value
     return newState
   }
-  if(action.type === 'input_change'){
+  /** ToDoList组件中(使用react-redux)用到的reducer   start*/
+  if (action.type === 'input_change') {
     let newState = JSON.parse(JSON.stringify(state))
     newState.inputValue = action.value
     return newState
   }
-  if(action.type === 'addList'){
+  if (action.type === 'addList') {
     let newState = JSON.parse(JSON.stringify(state))
     newState.list.push(state.inputValue)
     newState.inputValue = ''
     return newState
   }
+  /** ToDoList组件中(使用react-redux)用到的reducer   end*/
   return state
 }
