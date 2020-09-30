@@ -12,7 +12,7 @@ class ProductRow extends Component {
     const product = this.props.product;
     const name = product.stocked ? product.name : <span style={{color: 'red'}}>{product.name}</span>
     return ( 
-      <tr className={'green'}>
+      <tr className={styles.green}>
         <td>{name}</td>
         <td>{product.price}</td>
       </tr>
