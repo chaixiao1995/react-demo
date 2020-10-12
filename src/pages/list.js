@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Search from '../components/Search';
 import ProductTable from '../components/ProductTable';
-import store from '../store/index'
+import store from '../store/index';
 import * as types from '../store/types'
 import { changeInputAction } from '../store/actionCreators'
 import HookDemo from './hookDemo';
@@ -9,9 +9,9 @@ import HookDemo from './hookDemo';
 class List extends Component {
   constructor(props) {
     super(props);
-    this.state = store.getState()
+    this.state = store.getState();
     // 设置监听函数
-    store.subscribe(this.storeChange)
+    store.subscribe(this.storeChange);
   }
   changeFilterText = (filterText) => {
     // this.setState({filterText})
@@ -28,6 +28,7 @@ class List extends Component {
     store.dispatch({ type: types.CHANGE_CHECK, value: isStockOnly })
   }
   storeChange = () => {
+    console.log('change')
     this.setState(store.getState())
   }
   render() {
